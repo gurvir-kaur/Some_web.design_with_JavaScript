@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <title>FUCTIONS</title>
+
+    <header>
+      <h1>SOME BACIS FUNTIONS</h1>
+
+     </header>
+
+     <script type="text/javascript">
+
+     //From here starts the first funtion which calculates the square of a given nummber.
+        function doMath(){
+        var inputNum1=document.form1.input1.value;
+        var result = Math.sqrt(inputNum1);
+        document.form1.answer.value = result;
+    }
+      //From here starts next funtion which verifies if a given number is even or odd.
+       function espar(){
+       	var inputNum2=document.form2.input2.value;
+       	if (inputNum2%2 == 0 )return true;
+        else return false;
+       }
+
+       function verify(){
+       	var boolAux = espar();
+        if (boolAux)document.form2.answer2.value = ("This number is even");
+        else document.form2.answer2.value = ("This number is odd");
+       }
+       
+       //From here starts next funtion which calculates if the given vales are of a sqaure or a rectangle.
+       function find(){
+       	var a=document.form_side.inputA.value;
+       	var b=document.form_side.inputB.value;
+        if (a == b)document.form_side.answer_side.value = ("square");
+        else document.form_side.answer_side.value = ("rectangle");
+       }
+
+       // The next fuction calculates the factorial of a given number
+       function factorial(){
+
+       	var n = document.form_fac.num.value;
+       	if (n == 0) document.form_fac.answer_fac.value = 1;
+       	else document.form_fac.answer_fac.value = (n*factorial(n-1));
+       }
+
+       //The next fuction evaluates which is the largest number
+
+       function eval() {
+
+       	var a = document.form_largest.one.value;
+
+       	var b = document.form_largest.two.value;
+
+       	var c = document.form_largest.three.value;
+
+       	var d = document.form_largest.four.value;
+
+       	if (a>b & a>c & a>d) document.form_largest.largest.value = a;
+       	else if (b>a & b>c & b>d) document.form_largest.largest.value = b;
+       	else if(c>d) document.form_largest.largest.value = c;
+       	else document.form_largest.largest.value = d;
+
+       }
+
+       // The next function calculates the greatest common divisor of two given numbers.
+       function gcd(x, y){
+       	var x = document.form_gcd.first.value;
+       	var y = document.form_gcd.second.value;
+       	if (y == 0) document.form_gcd.answer_gcd.value = x;
+       	else document.form_gcd.answer_gcd.value = gcd(y, x%y);
+       }
+
+     </script>
+
+     <style>
+       body{
+       	padding:2%;
+       	line-height: 2;
+       	color:white;
+       	font-family: monospace;
+       	background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/06/Cube-Math-HD-Wallpaper.png);
+       }
+
+       b{
+       	font-family:"Courier New";
+       }
+
+       
+      h1{
+      	font-family: "sans-sherif";
+      	}
+
+       section{
+       	margin-bottom: 10px;
+       	background-color: #ffffff63;
+       	border-radius: 5px;
+       	padding:10px;
+       }
+
+
+     </style>
+    </head>
+<body>
+
+   <hr>
+  <section>
+   <b> This funtion calculates the square of a given number. </b>
+   <form name=form1> Enter Number:
+   <input type="text" name="input1" size=10>
+   <input type="button" value="Calculate" onClick='doMath()'>
+   <br>
+   The square root is:
+   <input type="text" name="answer" size=20>
+   </form>
+   </section>
+
+   <section>
+   <b> This funtion verifies if the given number is even or odd. </b>
+   <form name=form2> Enter Number:
+   <input type="text" name="input2" size=10>
+   <input type="button" value="Verify" onClick='verify()'>
+   <br>
+   The anwser is:
+   <input type="text" name="answer2" size=20>
+   </form>
+   </section>
+
+   <section>
+   <b> This funtion calculates if the given vales are of a square or a rectangle. </b>
+   <form name=form_side>
+        Enter side A: <input type="text" name="inputA" size=10>
+        Enter side B:<input type="text" name="inputB" size=10>
+        <input type="button" value="Calculate" onClick='find()'>
+   <br>
+   These are sides of a:
+   <input type="text" name="answer_side" size=20>
+   </form>
+   </section>
+
+   <section>
+   <b> This funtion calculates factorial of a given number. </b>
+   <form name=form_fac>
+        Enter a number: <input type="text" name="num" size=10>
+        <input type="button" value="Calculate" onClick='factorial()'>
+   <br>
+   The factorial of entered number is:
+   <input type="text" name="answer_fac" size=20>
+   </form>
+   </section>
+
+   <section>
+   <b> This funtion evaluates which of 4 given numbers is the largest. </b>
+   <form name=form_largest> Enter Numbers:
+   <input type="text" name="one" >
+   <input type="text" name="two" >
+   <input type="text" name="three" >
+   <input type="text" name="four" >
+   <input type="button" value="Evaluate" onClick='eval()'>
+   <br>
+   The largest number is:
+   <input type="text" name="largest">
+   </form>
+   </section>
+
+   <section>
+   <b> This funtion calculates greatest common dividor of two given numbers. </b>
+   <form name=form_gcd>
+        First number: <input type="text" name="first" >
+        Second number:<input type="text" name="second" >
+        <input type="button" value="Calculate" onClick='gcd()'>
+   <br>
+   The greatest common dividor is:
+   <input type="text" name="answer_gcd">
+   </form>
+   </section>
+
+
+</body>
+</html>
