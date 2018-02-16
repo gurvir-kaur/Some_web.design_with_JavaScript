@@ -40,48 +40,7 @@ var Student = ["Name", "Surname", "Email", "Profession"];
     	array.pop();
     	document.getElementById("Result2").innerHTML = professor;
     }
-     //From here starts the first funtion which calculates the square of a given nummber.
-        function doMath(){
-        var inputNum1=document.form1.input1.value;
-        var result = Math.sqrt(inputNum1);
-        document.form1.answer.value = result;
-    }
-      //From here starts next funtion which verifies if a given number is even or odd.
-       function espar(){
-       	var inputNum2=document.form2.input2.value;
-       	if (inputNum2%2 == 0 )return true;
-        else return false;
-       }
-       function verify(){
-       	var boolAux = espar();
-        if (boolAux)document.form2.answer2.value = ("This number is even");
-        else document.form2.answer2.value = ("This number is odd");
-       }
-       
-       //From here starts next funtion which calculates if the given vales are of a sqaure or a rectangle.
-       function find(){
-       	var a=document.form_side.inputA.value;
-       	var b=document.form_side.inputB.value;
-        if (a == b)document.form_side.answer_side.value = ("square");
-        else document.form_side.answer_side.value = ("rectangle");
-       }
-       // The next fuction calculates the factorial of a given number
-       function factorial(){
-       	var n = document.form_fac.num.value;
-       	if (n == 0) document.form_fac.answer_fac.value = 1;
-       	else document.form_fac.answer_fac.value = (n*factorial(n-1));
-       }
-       //The next fuction evaluates which is the largest number
-       function eval() {
-       	var a = document.form_largest.one.value;
-       	var b = document.form_largest.two.value;
-       	var c = document.form_largest.three.value;
-       	var d = document.form_largest.four.value;
-       	if (a>b & a>c & a>d) document.form_largest.largest.value = a;
-       	else if (b>a & b>c & b>d) document.form_largest.largest.value = b;
-       	else if(c>d) document.form_largest.largest.value = c;
-       	else document.form_largest.largest.value = d;
-       }
+    
 </script>
 <style>
   body{
