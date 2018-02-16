@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="text/javascript">
+var Student = ["Name", "Surname", "Email", "Profession"];
+    var x = 0;
+    var array = Array();
+    function add_element_to_array(){
+    	array[x] = document.getElementById("text1").value;
+    	x++;
+        document.getElementById("text1").value = "";
+        var e = "<hr/>";   
+    
+      for (var y=0; y<array.length; y++){
+      	e += Student[y] + " = " + array[y] + "<br/>";
+      	document.getElementById("button2").value = Student[y+1];
+      }
+     document.getElementById("Result").innerHTML = e;
+    }
+    function delete_element_from_array(){
+    	array.pop();
+    	document.getElementById("Result").innerHTML = array;
+    }
+    var z = 0;
+    var professor = Array();
+    function add_to_array(){
+    	professor[z] = document.getElementById("text2").value;
+    	z++;
+        document.getElementById("text2").value = "";
+        var j = "<hr/>";   
+    
+      for (var y=0; y<professor.length; y++){
+      	j += Student[y] + " = " + professor[y] + "<br/>";
+      	document.getElementById("button4").value = Student[y+1];
+      }
+     document.getElementById("Result2").innerHTML = j;
+    }
+    function deletet_from_array(){
+    	array.pop();
+    	document.getElementById("Result2").innerHTML = professor;
+    }
+     //From here starts the first funtion which calculates the square of a given nummber.
+        function doMath(){
+        var inputNum1=document.form1.input1.value;
+        var result = Math.sqrt(inputNum1);
+        document.form1.answer.value = result;
+    }
+      //From here starts next funtion which verifies if a given number is even or odd.
+       function espar(){
+       	var inputNum2=document.form2.input2.value;
+       	if (inputNum2%2 == 0 )return true;
+        else return false;
+       }
+       function verify(){
+       	var boolAux = espar();
+        if (boolAux)document.form2.answer2.value = ("This number is even");
+        else document.form2.answer2.value = ("This number is odd");
+       }
+       
+       //From here starts next funtion which calculates if the given vales are of a sqaure or a rectangle.
+       function find(){
+       	var a=document.form_side.inputA.value;
+       	var b=document.form_side.inputB.value;
+        if (a == b)document.form_side.answer_side.value = ("square");
+        else document.form_side.answer_side.value = ("rectangle");
+       }
+       // The next fuction calculates the factorial of a given number
+       function factorial(){
+       	var n = document.form_fac.num.value;
+       	if (n == 0) document.form_fac.answer_fac.value = 1;
+       	else document.form_fac.answer_fac.value = (n*factorial(n-1));
+       }
+       //The next fuction evaluates which is the largest number
+       function eval() {
+       	var a = document.form_largest.one.value;
+       	var b = document.form_largest.two.value;
+       	var c = document.form_largest.three.value;
+       	var d = document.form_largest.four.value;
+       	if (a>b & a>c & a>d) document.form_largest.largest.value = a;
+       	else if (b>a & b>c & b>d) document.form_largest.largest.value = b;
+       	else if(c>d) document.form_largest.largest.value = c;
+       	else document.form_largest.largest.value = d;
+       }
+</script>
+<style>
+  body{
+  	padding:1%;
+  		line-height: 2;
+       	color:white;
+       	font-family: monospace;
+  	 background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/06/Cube-Math-HD-Wallpaper.png);
+  }
+  
+       b{
+       	font-family:"Courier New";
+       }
+       
+      h1{
+      	font-family: "sans-sherif";
+      	}
+       section{
+       	margin-bottom: 10px;
+       	background-color: #ffffff63;
+       	border-radius: 5px;
+       	padding:10px;
+       }
+ 
+</style>
+    <h1>Information</h1>
+    <hr>
+    <h2>Instructions:</h2>
+    <p> You need to type the information in the box and then click on add button. The format of the form is the following: 
+    </p>
+    <ul >
+       <li>Name</li>
+       <li>Surname</li>
+       <li>Email</li>
+       <li>Profession</li>
+     </ul> 
+     <hr>
+    <div>
+    <button id="show">Student form </button>
+    <br>
+    <br>
+    <input type="text" id="text1"></input>
+    <input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" id="button2" value="Name" ></input>
+        <input type="button" id="button3" value="Delete" onclick="delete_element_from_array();"></input>
+    <div id="Result"></div> 
+    </div>
+
+    <div>
+    <button id="show" style="margin-top: 20px;" >Professor form </button>
+    <br>
+    <br>
+    <input type="text" id="text2"></input>
+    <input type="button" id="button3" value="Add" onclick="add_to_array();"></input>
+    <input type="button" id="button4" value="Name" ></input>
+        <input type="button" id="button5" value="Delete" onclick="delete_from_array();"></input>
+    <div id="Result2"></div> 
+    </div>
+ <hr>
+  <footer>
+    <div style ="background-color: grey; border-radius: 10px; height: 5%;text-align: center; padding: 2%;">
+      <h3>Thank you</h3>
+    </div>
+  </footer>
+
+  
+
+</body>
+</html> 
